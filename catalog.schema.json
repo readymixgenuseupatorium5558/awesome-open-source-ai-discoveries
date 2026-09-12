@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QuicqDev AI catalog",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "repository",
+    "title",
+    "description",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "repository": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "url",
+          "category",
+          "summary",
+          "use_case",
+          "requirements",
+          "caveat",
+          "source_urls",
+          "reviewed_on",
+          "verification"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "use_case": {
+            "type": "string"
+          },
+          "requirements": {
+            "type": "string"
+          },
+          "caveat": {
+            "type": "string"
+          },
+          "small_model_fit": {
+            "type": "string"
+          },
+          "demo_note": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "demo_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "test_evidence_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "source_urls": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "reviewed_on": {
+            "type": "string",
+            "format": "date"
+          },
+          "verification": {
+            "enum": [
+              "documentation-reviewed",
+              "contributor-tested",
+              "maintainer-tested"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

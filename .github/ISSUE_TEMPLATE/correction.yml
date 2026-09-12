@@ -1,0 +1,16 @@
+name: Correct an entry
+description: Report changed requirements, a broken link or an inaccurate claim.
+title: "Correction: "
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Entry name or ID
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Correction and supporting source
+    validations:
+      required: true

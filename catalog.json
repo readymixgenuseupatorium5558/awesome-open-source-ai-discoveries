@@ -1,0 +1,316 @@
+{
+  "title": "Awesome Open-Source AI Discoveries",
+  "description": "Explore creative open-source AI projects for 3D, images, video, music, speech and documents, with upstream examples, setup notes and limitations.",
+  "intro": "Find projects whose result is easy to understand: an image becomes a 3D object, a recording becomes editable notes, or a drawing becomes an animation. Discoveries are editorial picks, not a ranking by stars or a claim that every project is new. Research demos and archived projects are labeled when included.",
+  "start_here": [
+    {
+      "id": "triposr",
+      "task": "Turn an image into a 3D starting point",
+      "reason": "A concrete visual reconstruction workflow."
+    },
+    {
+      "id": "basic-pitch",
+      "task": "Turn instrument audio into MIDI",
+      "reason": "An output you can inspect in a music workflow."
+    },
+    {
+      "id": "audio-separator",
+      "task": "Separate a music recording into stems",
+      "reason": "A practical audio-processing experiment."
+    },
+    {
+      "id": "sam2",
+      "task": "Extract masks from images or video",
+      "reason": "A reusable visual editing building block."
+    },
+    {
+      "id": "animated-drawings",
+      "task": "Explore animated character drawings",
+      "reason": "An archived research demo with a playful result."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Are these hidden gems with few GitHub stars?",
+      "answer": "Not necessarily. Selection is based on an interesting, understandable result and inspectable source material, not a star threshold. Established projects can be useful discoveries for a new reader."
+    },
+    {
+      "question": "Are the online demos guaranteed to stay available?",
+      "answer": "No. Hosted demos can queue, require login, go offline or impose usage limits. Follow the original repository for current examples and local setup. A README demonstration is different from a live hosted application."
+    },
+    {
+      "question": "Can I use the code and model weights commercially?",
+      "answer": "Check them separately. Open-source code may load weights under different terms, including noncommercial conditions. Relevant distinctions are noted in project cards, with the upstream source as the authority."
+    },
+    {
+      "question": "Why include an archived project?",
+      "answer": "An archived research demo can still illustrate a useful creative technique. Its archived status is stated in the caveat, and it should not be mistaken for a maintained application. Prefer active alternatives for ongoing workflows."
+    }
+  ],
+  "schema_version": "1.0",
+  "repository": "QuicqDev/awesome-open-source-ai-discoveries",
+  "entries": [
+    {
+      "id": "triposr",
+      "name": "TripoSR",
+      "url": "https://github.com/VAST-AI-Research/TripoSR",
+      "demo_url": "https://github.com/VAST-AI-Research/TripoSR/tree/main/figures",
+      "demo_note": "Upstream examples, not live demo",
+      "category": "3D and depth",
+      "summary": "Reconstruct a 3D object from one image, with command-line inference and a local Gradio interface.",
+      "use_case": "Turn an object illustration into a mesh for an early game-asset or product-visualization prototype.",
+      "requirements": "Python, PyTorch, downloaded model weights and the repository dependencies; CUDA setup must match the installed PyTorch build when using GPU acceleration.",
+      "caveat": "Treat reconstructed geometry as a starting point to inspect and edit; a single input view cannot establish the object's unseen surfaces.",
+      "source_urls": [
+        "https://github.com/VAST-AI-Research/TripoSR"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "moge",
+      "name": "MoGe",
+      "url": "https://github.com/microsoft/MoGe",
+      "demo_url": "https://huggingface.co/spaces/Ruicheng/MoGe-2",
+      "demo_note": "Official MoGe-2 interactive demo; hosted availability may vary and compute may queue.",
+      "category": "3D and depth",
+      "summary": "Estimate scene geometry from a photograph and export depth maps, point clouds or meshes; MoGe-2 also provides metric-scale predictions.",
+      "use_case": "Explore a room photo as a 3D scene or create geometry inputs for a visual prototype.",
+      "requirements": "Python dependencies and a matching pretrained checkpoint; the documented inference example uses a CUDA device, and a local Gradio demo is included.",
+      "caveat": "Match the model version and checkpoint; the current MoGe-3 instructions require an explicit checkpoint path. Inspect inferred geometry before treating it as a measurement.",
+      "source_urls": [
+        "https://github.com/microsoft/MoGe",
+        "https://github.com/microsoft/MoGe/blob/main/README.md"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "depth-anything-v2",
+      "name": "Depth Anything V2",
+      "url": "https://github.com/DepthAnything/Depth-Anything-V2",
+      "demo_url": "https://huggingface.co/spaces/depth-anything/Depth-Anything-V2",
+      "demo_note": "Official interactive demo; hosted availability may vary and compute may queue.",
+      "category": "3D and depth",
+      "summary": "Predict depth maps from images or videos, with several checkpoint sizes and a Gradio demo.",
+      "use_case": "Produce depth masks for parallax experiments, depth-aware compositing or computer-vision prototypes.",
+      "requirements": "Python, PyTorch and a downloaded checkpoint; the example selects CUDA, Apple MPS or CPU according to availability.",
+      "caveat": "Default checkpoints estimate relative depth. Small-model weights use Apache-2.0, while larger variants carry noncommercial terms; choose the checkpoint deliberately.",
+      "source_urls": [
+        "https://github.com/DepthAnything/Depth-Anything-V2"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "sam2",
+      "name": "SAM 2",
+      "url": "https://github.com/facebookresearch/sam2",
+      "demo_url": "https://sam2.metademolab.com/",
+      "demo_note": "Official interactive demo; requires JavaScript. Hosted availability may vary and compute may queue.",
+      "category": "Images and video",
+      "summary": "Select objects in images and propagate segmentation masks through video, with example notebooks and web-demo source.",
+      "use_case": "Prototype object cutouts, video masking or annotation tools from user-supplied prompts.",
+      "requirements": "Python, compatible PyTorch and TorchVision versions, and a model checkpoint; the documented installation targets a GPU machine and recommends WSL for Windows.",
+      "caveat": "Match checkpoint and code versions. A failed optional CUDA extension build can limit post-processing, and masks still need review for the intended footage.",
+      "source_urls": [
+        "https://github.com/facebookresearch/sam2"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "birefnet",
+      "name": "BiRefNet",
+      "url": "https://github.com/ZhengPeng7/BiRefNet",
+      "demo_url": "https://huggingface.co/spaces/ZhengPeng7/BiRefNet_demo",
+      "demo_note": "Official interactive demo; hosted availability may vary and compute may queue.",
+      "category": "Images and video",
+      "summary": "Extract detailed foreground masks using pretrained models for general segmentation, portraits and image matting.",
+      "use_case": "Build a subject-cutout workflow or experiment with placing text behind a foreground subject.",
+      "requirements": "A Python inference environment and task-appropriate weights; upstream supplies PyTorch examples, notebooks and ONNX export guidance.",
+      "caveat": "Matting and binary segmentation models solve different problems. Check the chosen weights and preprocessing instead of assuming all model variants behave alike.",
+      "source_urls": [
+        "https://github.com/ZhengPeng7/BiRefNet"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "rembg",
+      "name": "rembg",
+      "url": "https://github.com/danielgatis/rembg",
+      "category": "Images and video",
+      "summary": "Remove image backgrounds through a command-line tool, Python library, HTTP server or Docker container.",
+      "use_case": "Batch-process product photos or prepare transparent image assets for a website.",
+      "requirements": "A supported Python version and a CPU or GPU backend; local ONNX models download on first use.",
+      "caveat": "Select a local model when local processing matters: the optional withoutbg backend calls a cloud API. Output quality also depends on which segmentation model is selected.",
+      "source_urls": [
+        "https://github.com/danielgatis/rembg"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "mflux",
+      "name": "MFLUX",
+      "url": "https://github.com/mflux-community/mflux",
+      "category": "Images and video",
+      "summary": "Run generative image models locally on a Mac using native MLX implementations, a CLI and a Python API.",
+      "use_case": "Experiment with local image generation while keeping prompts and the creative workflow on an Apple Silicon machine.",
+      "requirements": "An Apple Silicon Mac with a compatible MLX environment; install with uv or Python tooling and download the selected model on first use.",
+      "caveat": "Memory needs and supported features depend on the selected model. The project's code license does not replace the separate terms for downloaded model weights.",
+      "source_urls": [
+        "https://github.com/mflux-community/mflux"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "upscayl",
+      "name": "Upscayl",
+      "url": "https://github.com/upscayl/upscayl",
+      "demo_url": "https://github.com/upscayl/upscayl/blob/main/COMPARISONS.MD",
+      "demo_note": "Upstream examples, not live demo",
+      "category": "Images and video",
+      "summary": "A desktop application for AI image upscaling on Linux, macOS and Windows, with visible before-and-after examples.",
+      "use_case": "Enlarge a small illustration or pixelated image before using it in a presentation or design draft.",
+      "requirements": "Install the desktop release for your operating system and use a Vulkan-compatible GPU; many integrated GPUs are unsupported.",
+      "caveat": "Upscaling synthesizes plausible detail. Upstream explicitly says it is not a tool for restoring focus to a completely blurred image.",
+      "source_urls": [
+        "https://github.com/upscayl/upscayl"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "audio-separator",
+      "name": "Audio Separator",
+      "url": "https://github.com/nomadkaraoke/python-audio-separator",
+      "category": "Music and speech",
+      "summary": "Separate an audio recording into stems such as vocals and accompaniment using a CLI or Python API and a choice of pretrained models.",
+      "use_case": "Create practice tracks or isolate parts of a recording you are authorized to process.",
+      "requirements": "Python or Docker, FFmpeg and a selected separation model; upstream documents CPU, CUDA and Apple Silicon options.",
+      "caveat": "Available stems and accelerator support vary by model. Listen for residual bleed and artifacts, and check the selected model's terms before redistribution.",
+      "source_urls": [
+        "https://github.com/nomadkaraoke/python-audio-separator"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "basic-pitch",
+      "name": "Basic Pitch",
+      "url": "https://github.com/spotify/basic-pitch",
+      "demo_url": "https://basicpitch.spotify.com/",
+      "demo_note": "Official browser demo; hosted availability may vary. Browser support and the input recording affect the experience.",
+      "category": "Music and speech",
+      "summary": "Convert an audio performance into MIDI notes with pitch bends using Spotify's music-transcription library.",
+      "use_case": "Turn an instrumental recording into an editable starting point in a digital audio workstation.",
+      "requirements": "A supported Python environment and compatible audio file; the README links to a browser demo and documents platform-specific model runtimes.",
+      "caveat": "Upstream says transcription works best on one instrument at a time. Plan to review and correct notes from a dense mix.",
+      "source_urls": [
+        "https://github.com/spotify/basic-pitch"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "chatterbox",
+      "name": "Chatterbox",
+      "url": "https://github.com/resemble-ai/chatterbox",
+      "demo_url": "https://huggingface.co/spaces/ResembleAI/Chatterbox",
+      "demo_note": "Official Chatterbox demo linked by upstream; hosted availability may vary and compute may queue. Other model variants have separate demos.",
+      "category": "Music and speech",
+      "summary": "A family of text-to-speech models with expressive controls, multilingual options and reference-audio voice conditioning.",
+      "use_case": "Prototype narration or a speaking character using a voice you own or have permission to use.",
+      "requirements": "Python, the chatterbox-tts package and model downloads; documented generation examples use CUDA, and reference-conditioned generation needs an audio clip.",
+      "caveat": "Model variants support different controls and languages. Reference-language mismatch can affect accent, and generated audio includes the project's watermarking mechanism.",
+      "source_urls": [
+        "https://github.com/resemble-ai/chatterbox"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "kokoro",
+      "name": "Kokoro",
+      "url": "https://github.com/hexgrad/kokoro",
+      "demo_url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/SAMPLES.md",
+      "demo_note": "Upstream examples, not live demo",
+      "category": "Music and speech",
+      "summary": "A Python inference library for an open-weight text-to-speech model, with selectable voices and audio-file export examples.",
+      "use_case": "Add local read-aloud audio or draft narration to a small application.",
+      "requirements": "Python, the kokoro package, model and voice assets, and relevant language dependencies; espeak-ng supports some languages and English fallback pronunciation.",
+      "caveat": "Language and voice selection must match the pipeline. Review pronunciation and pacing on real text before using the output as finished narration.",
+      "source_urls": [
+        "https://github.com/hexgrad/kokoro"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "docling",
+      "name": "Docling",
+      "url": "https://github.com/docling-project/docling",
+      "demo_url": "https://docling-project.github.io/docling/examples/",
+      "demo_note": "Upstream examples, not live demo",
+      "category": "Documents and knowledge",
+      "summary": "Convert PDFs and other document formats into structured content, including Markdown and JSON, with layout, table and OCR support.",
+      "use_case": "Prepare a collection of reports for search, retrieval or a document-processing application.",
+      "requirements": "A supported Python environment and the docling package; download the models required by the selected local parsing pipeline.",
+      "caveat": "Optional model licenses differ from the code license. Spot-check tables, formulas and reading order before indexing extracted content.",
+      "source_urls": [
+        "https://github.com/docling-project/docling"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "surya",
+      "name": "Surya",
+      "url": "https://github.com/datalab-to/surya",
+      "demo_url": "https://github.com/datalab-to/surya#examples",
+      "demo_note": "Upstream examples, not live demo",
+      "category": "Documents and knowledge",
+      "summary": "Perform OCR, page-layout analysis, reading-order detection and table recognition, with annotated examples for different document types.",
+      "use_case": "Explore how a document parser identifies text, tables and page structure in a scanned document.",
+      "requirements": "Python and surya-ocr plus an inference backend: the reviewed instructions use vLLM for NVIDIA GPUs or llama.cpp for CPU and Apple Silicon.",
+      "caveat": "The code and model weights have different licenses; broader commercial use of the weights can require a separate license. Review the current model terms before deployment.",
+      "source_urls": [
+        "https://github.com/datalab-to/surya"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    },
+    {
+      "id": "animated-drawings",
+      "name": "Animated Drawings",
+      "url": "https://github.com/facebookresearch/AnimatedDrawings",
+      "demo_url": "https://sketch.metademolab.com/",
+      "demo_note": "Official browser demo linked from the archived project; requires JavaScript. Hosted availability may vary and compute may queue.",
+      "category": "Playful experiments",
+      "summary": "Research code that turns drawings of human figures into animated characters, with configurable motions and scenes.",
+      "use_case": "Make a hand-drawn character move in a creative coding or educational experiment.",
+      "requirements": "Follow the repository's Python and Conda setup; included example configurations demonstrate rendering an interactive scene.",
+      "caveat": "The upstream repository was archived in September 2025 and is read-only. Treat it as a research demo that may need dependency fixes rather than an actively maintained application.",
+      "source_urls": [
+        "https://github.com/facebookresearch/AnimatedDrawings"
+      ],
+      "reviewed_on": "2026-09-12",
+      "verification": "documentation-reviewed"
+    }
+  ],
+  "related": [
+    {
+      "slug": "awesome-ai-on-your-laptop",
+      "title": "Awesome AI on Your Laptop",
+      "purpose": "Find local AI apps for document chat, transcription, dictation, image editing and coding, with setup requirements, source links and practical caveats."
+    },
+    {
+      "slug": "awesome-small-ai-apps",
+      "title": "Awesome Small AI Apps",
+      "purpose": "Practical small-model AI applications and building blocks for OCR, speech, embeddings, browser AI, mobile vision and text extraction."
+    }
+  ]
+}

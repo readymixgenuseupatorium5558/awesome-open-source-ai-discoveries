@@ -1,0 +1,29 @@
+# Awesome Open-Source AI Discoveries
+
+> Explore creative open-source AI projects for 3D, images, video, music, speech and documents, with upstream examples, setup notes and limitations.
+
+A documentation-reviewed collection maintained by QuicqDev. Follow source links for current upstream facts. Requirements are configuration-specific; inclusion is not an installation, security or performance certification.
+
+## Catalog
+
+- [Structured entries](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/catalog.json): Stable IDs, use cases, requirements, limitations and evidence.
+- [Schema](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/catalog.schema.json): Machine-readable field definitions.
+- [Methodology](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/METHODOLOGY.md): Selection rules and evidence meanings.
+
+## Projects
+
+- [TripoSR](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/triposr.md): Turn an object illustration into a mesh for an early game-asset or product-visualization prototype. Evidence: documentation-reviewed.
+- [MoGe](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/moge.md): Explore a room photo as a 3D scene or create geometry inputs for a visual prototype. Evidence: documentation-reviewed.
+- [Depth Anything V2](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/depth-anything-v2.md): Produce depth masks for parallax experiments, depth-aware compositing or computer-vision prototypes. Evidence: documentation-reviewed.
+- [SAM 2](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/sam2.md): Prototype object cutouts, video masking or annotation tools from user-supplied prompts. Evidence: documentation-reviewed.
+- [BiRefNet](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/birefnet.md): Build a subject-cutout workflow or experiment with placing text behind a foreground subject. Evidence: documentation-reviewed.
+- [rembg](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/rembg.md): Batch-process product photos or prepare transparent image assets for a website. Evidence: documentation-reviewed.
+- [MFLUX](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/mflux.md): Experiment with local image generation while keeping prompts and the creative workflow on an Apple Silicon machine. Evidence: documentation-reviewed.
+- [Upscayl](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/upscayl.md): Enlarge a small illustration or pixelated image before using it in a presentation or design draft. Evidence: documentation-reviewed.
+- [Audio Separator](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/audio-separator.md): Create practice tracks or isolate parts of a recording you are authorized to process. Evidence: documentation-reviewed.
+- [Basic Pitch](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/basic-pitch.md): Turn an instrumental recording into an editable starting point in a digital audio workstation. Evidence: documentation-reviewed.
+- [Chatterbox](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/chatterbox.md): Prototype narration or a speaking character using a voice you own or have permission to use. Evidence: documentation-reviewed.
+- [Kokoro](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/kokoro.md): Add local read-aloud audio or draft narration to a small application. Evidence: documentation-reviewed.
+- [Docling](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/docling.md): Prepare a collection of reports for search, retrieval or a document-processing application. Evidence: documentation-reviewed.
+- [Surya](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/surya.md): Explore how a document parser identifies text, tables and page structure in a scanned document. Evidence: documentation-reviewed.
+- [Animated Drawings](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/projects/animated-drawings.md): Make a hand-drawn character move in a creative coding or educational experiment. Evidence: documentation-reviewed.

@@ -1,0 +1,578 @@
+# Awesome Open-Source AI Discoveries
+
+Explore creative open-source AI projects for 3D, images, video, music, speech and documents, with upstream examples, setup notes and limitations.
+
+**15 curated entries** · [Browse by task](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#browse-by-task) · [Suggest a project](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/issues/new?template=suggest-project.yml) · [JSON catalog](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/catalog.json) · [Agent index](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/llms.txt)
+
+Find projects whose result is easy to understand: an image becomes a 3D object, a recording becomes editable notes, or a drawing becomes an animation. Discoveries are editorial picks, not a ranking by stars or a claim that every project is new. Research demos and archived projects are labeled when included.
+
+## Start here
+
+| If you want to... | Explore | Why it belongs |
+|---|---|---|
+| Turn an image into a 3D starting point | [TripoSR](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/triposr.md) | A concrete visual reconstruction workflow. |
+| Turn instrument audio into MIDI | [Basic Pitch](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/basic-pitch.md) | An output you can inspect in a music workflow. |
+| Separate a music recording into stems | [Audio Separator](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/audio-separator.md) | A practical audio-processing experiment. |
+| Extract masks from images or video | [SAM 2](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/sam2.md) | A reusable visual editing building block. |
+| Explore animated character drawings | [Animated Drawings](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/animated-drawings.md) | An archived research demo with a playful result. |
+
+## What is checked
+
+Entries distinguish documentation review from hands-on testing. The initial collection is **documentation-reviewed**: source material was inspected, but these applications have not all been installed or benchmarked by QuicqDev. Each project card records its sources, review date, requirements and a limitation.
+
+Hardware requirements depend on model, quantization, context length and workload. We do not infer RAM needs from parameter counts. Application code, model weights and optional hosted services can have different licenses or costs. Check the linked upstream terms for the configuration you choose.
+
+## Browse by task
+
+- [3D and depth](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#3d-and-depth)
+- [Images and video](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#images-and-video)
+- [Music and speech](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#music-and-speech)
+- [Documents and knowledge](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#documents-and-knowledge)
+- [Playful experiments](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#playful-experiments)
+
+## 3D and depth
+
+| Project | Useful for | Setup and requirements |
+|---|---|---|
+| [TripoSR](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/triposr.md) · [upstream](https://github.com/VAST-AI-Research/TripoSR) · [demo / examples](https://github.com/VAST-AI-Research/TripoSR/tree/main/figures) | Turn an object illustration into a mesh for an early game-asset or product-visualization prototype. | Python, PyTorch, downloaded model weights and the repository dependencies; CUDA setup must match the installed PyTorch build when using GPU acceleration. |
+| [MoGe](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/moge.md) · [upstream](https://github.com/microsoft/MoGe) · [demo / examples](https://huggingface.co/spaces/Ruicheng/MoGe-2) | Explore a room photo as a 3D scene or create geometry inputs for a visual prototype. | Python dependencies and a matching pretrained checkpoint; the documented inference example uses a CUDA device, and a local Gradio demo is included. |
+| [Depth Anything V2](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/depth-anything-v2.md) · [upstream](https://github.com/DepthAnything/Depth-Anything-V2) · [demo / examples](https://huggingface.co/spaces/depth-anything/Depth-Anything-V2) | Produce depth masks for parallax experiments, depth-aware compositing or computer-vision prototypes. | Python, PyTorch and a downloaded checkpoint; the example selects CUDA, Apple MPS or CPU according to availability. |
+
+## Images and video
+
+| Project | Useful for | Setup and requirements |
+|---|---|---|
+| [SAM 2](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/sam2.md) · [upstream](https://github.com/facebookresearch/sam2) · [demo / examples](https://sam2.metademolab.com/) | Prototype object cutouts, video masking or annotation tools from user-supplied prompts. | Python, compatible PyTorch and TorchVision versions, and a model checkpoint; the documented installation targets a GPU machine and recommends WSL for Windows. |
+| [BiRefNet](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/birefnet.md) · [upstream](https://github.com/ZhengPeng7/BiRefNet) · [demo / examples](https://huggingface.co/spaces/ZhengPeng7/BiRefNet_demo) | Build a subject-cutout workflow or experiment with placing text behind a foreground subject. | A Python inference environment and task-appropriate weights; upstream supplies PyTorch examples, notebooks and ONNX export guidance. |
+| [rembg](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/rembg.md) · [upstream](https://github.com/danielgatis/rembg) | Batch-process product photos or prepare transparent image assets for a website. | A supported Python version and a CPU or GPU backend; local ONNX models download on first use. |
+| [MFLUX](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/mflux.md) · [upstream](https://github.com/mflux-community/mflux) | Experiment with local image generation while keeping prompts and the creative workflow on an Apple Silicon machine. | An Apple Silicon Mac with a compatible MLX environment; install with uv or Python tooling and download the selected model on first use. |
+| [Upscayl](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/upscayl.md) · [upstream](https://github.com/upscayl/upscayl) · [demo / examples](https://github.com/upscayl/upscayl/blob/main/COMPARISONS.MD) | Enlarge a small illustration or pixelated image before using it in a presentation or design draft. | Install the desktop release for your operating system and use a Vulkan-compatible GPU; many integrated GPUs are unsupported. |
+
+## Music and speech
+
+| Project | Useful for | Setup and requirements |
+|---|---|---|
+| [Audio Separator](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/audio-separator.md) · [upstream](https://github.com/nomadkaraoke/python-audio-separator) | Create practice tracks or isolate parts of a recording you are authorized to process. | Python or Docker, FFmpeg and a selected separation model; upstream documents CPU, CUDA and Apple Silicon options. |
+| [Basic Pitch](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/basic-pitch.md) · [upstream](https://github.com/spotify/basic-pitch) · [demo / examples](https://basicpitch.spotify.com/) | Turn an instrumental recording into an editable starting point in a digital audio workstation. | A supported Python environment and compatible audio file; the README links to a browser demo and documents platform-specific model runtimes. |
+| [Chatterbox](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/chatterbox.md) · [upstream](https://github.com/resemble-ai/chatterbox) · [demo / examples](https://huggingface.co/spaces/ResembleAI/Chatterbox) | Prototype narration or a speaking character using a voice you own or have permission to use. | Python, the chatterbox-tts package and model downloads; documented generation examples use CUDA, and reference-conditioned generation needs an audio clip. |
+| [Kokoro](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/kokoro.md) · [upstream](https://github.com/hexgrad/kokoro) · [demo / examples](https://huggingface.co/hexgrad/Kokoro-82M/blob/main/SAMPLES.md) | Add local read-aloud audio or draft narration to a small application. | Python, the kokoro package, model and voice assets, and relevant language dependencies; espeak-ng supports some languages and English fallback pronunciation. |
+
+## Documents and knowledge
+
+| Project | Useful for | Setup and requirements |
+|---|---|---|
+| [Docling](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/docling.md) · [upstream](https://github.com/docling-project/docling) · [demo / examples](https://docling-project.github.io/docling/examples/) | Prepare a collection of reports for search, retrieval or a document-processing application. | A supported Python environment and the docling package; download the models required by the selected local parsing pipeline. |
+| [Surya](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/surya.md) · [upstream](https://github.com/datalab-to/surya) · [demo / examples](https://github.com/datalab-to/surya#examples) | Explore how a document parser identifies text, tables and page structure in a scanned document. | Python and surya-ocr plus an inference backend: the reviewed instructions use vLLM for NVIDIA GPUs or llama.cpp for CPU and Apple Silicon. |
+
+## Playful experiments
+
+| Project | Useful for | Setup and requirements |
+|---|---|---|
+| [Animated Drawings](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/projects/animated-drawings.md) · [upstream](https://github.com/facebookresearch/AnimatedDrawings) · [demo / examples](https://sketch.metademolab.com/) | Make a hand-drawn character move in a creative coding or educational experiment. | Follow the repository's Python and Conda setup; included example configurations demonstrate rendering an interactive scene. |
+
+## Frequently asked questions
+
+### Are these hidden gems with few GitHub stars?
+
+Not necessarily. Selection is based on an interesting, understandable result and inspectable source material, not a star threshold. Established projects can be useful discoveries for a new reader.
+
+### Are the online demos guaranteed to stay available?
+
+No. Hosted demos can queue, require login, go offline or impose usage limits. Follow the original repository for current examples and local setup. A README demonstration is different from a live hosted application.
+
+### Can I use the code and model weights commercially?
+
+Check them separately. Open-source code may load weights under different terms, including noncommercial conditions. Relevant distinctions are noted in project cards, with the upstream source as the authority.
+
+### Why include an archived project?
+
+An archived research demo can still illustrate a useful creative technique. Its archived status is stated in the caveat, and it should not be mistaken for a maintained application. Prefer active alternatives for ongoing workflows.
+
+## How to contribute
+
+Add a useful project, correct an outdated entry, or submit a reproducible compatibility report. Edit `catalog.json` and run `python scripts/build.py`; the README, project cards and agent index are generated from that source. See [CONTRIBUTING.md](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md) for selection criteria and the field format.
+
+Automated checks validate the catalog on changes and check external links weekly. A reachable link does not establish that software works, is secure, or fits your hardware. Failed and inconclusive checks need review; metadata checks never advance an editorial review date.
+
+## For agents and search tools
+
+Read the [structured catalog](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/catalog.json), its [schema](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/catalog.schema.json), or the compact [llms.txt index](https://raw.githubusercontent.com/QuicqDev/awesome-open-source-ai-discoveries/main/llms.txt). Each entry has a stable ID, category, use case, prerequisites, caveat, evidence level and source URLs. Cite the upstream project for its capabilities and this collection for editorial comparisons.
+
+`llms.txt` is a navigation aid, not a promise of inclusion in any search engine or model response. Unknown requirements remain unknown; documentation-reviewed entries must not be described as personally tested.
+
+## Related QuicqDev collections
+
+- [Awesome AI on Your Laptop](https://github.com/QuicqDev/awesome-ai-on-your-laptop) — Find local AI apps for document chat, transcription, dictation, image editing and coding, with setup requirements, source links and practical caveats.
+- [Awesome Small AI Apps](https://github.com/QuicqDev/awesome-small-ai-apps) — Practical small-model AI applications and building blocks for OCR, speech, embeddings, browser AI, mobile vision and text extraction.
+
+## Maintainers and attribution
+
+Curated by [Ashutosh Mishra](https://github.com/ASH1998) at [QuicqDev](https://github.com/QuicqDev). Follow [@ashu_mi_2](https://x.com/ashu_mi_2) for project discoveries and practical AI experiments.
+
+All linked projects belong to their respective creators. This repository contains original editorial summaries and links; it does not relicense third-party software, model weights or media. No paid placement or affiliate ranking is included.
+
+If this collection helped you find something useful, star it to bookmark it. Use GitHub Watch settings for notifications, or contribute an entry to help the next reader.
+
+Original catalog text and maintenance scripts: [MIT License](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/LICENSE).
+
+
+# TripoSR: Turn an object illustration into a mesh for an early game-asset or product-visualization prototype
+
+Reconstruct a 3D object from one image, with command-line inference and a local Gradio interface.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://github.com/VAST-AI-Research/TripoSR/tree/main/figures)
+
+Upstream examples, not live demo
+
+[Upstream project](https://github.com/VAST-AI-Research/TripoSR) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#3d-and-depth)
+
+| Field | Details |
+|---|---|
+| Category | 3D and depth |
+| Use case | Turn an object illustration into a mesh for an early game-asset or product-visualization prototype. |
+| Requirements | Python, PyTorch, downloaded model weights and the repository dependencies; CUDA setup must match the installed PyTorch build when using GPU acceleration. |
+| Caveat | Treat reconstructed geometry as a starting point to inspect and edit; a single input view cannot establish the object's unseen surfaces. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/VAST-AI-Research/TripoSR)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `triposr`.
+
+
+# MoGe: Explore a room photo as a 3D scene or create geometry inputs for a visual prototype
+
+Estimate scene geometry from a photograph and export depth maps, point clouds or meshes; MoGe-2 also provides metric-scale predictions.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://huggingface.co/spaces/Ruicheng/MoGe-2)
+
+Official MoGe-2 interactive demo; hosted availability may vary and compute may queue.
+
+[Upstream project](https://github.com/microsoft/MoGe) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#3d-and-depth)
+
+| Field | Details |
+|---|---|
+| Category | 3D and depth |
+| Use case | Explore a room photo as a 3D scene or create geometry inputs for a visual prototype. |
+| Requirements | Python dependencies and a matching pretrained checkpoint; the documented inference example uses a CUDA device, and a local Gradio demo is included. |
+| Caveat | Match the model version and checkpoint; the current MoGe-3 instructions require an explicit checkpoint path. Inspect inferred geometry before treating it as a measurement. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/microsoft/MoGe) · [Source 2](https://github.com/microsoft/MoGe/blob/main/README.md)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `moge`.
+
+
+# Depth Anything V2: Produce depth masks for parallax experiments, depth-aware compositing or computer-vision prototypes
+
+Predict depth maps from images or videos, with several checkpoint sizes and a Gradio demo.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://huggingface.co/spaces/depth-anything/Depth-Anything-V2)
+
+Official interactive demo; hosted availability may vary and compute may queue.
+
+[Upstream project](https://github.com/DepthAnything/Depth-Anything-V2) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#3d-and-depth)
+
+| Field | Details |
+|---|---|
+| Category | 3D and depth |
+| Use case | Produce depth masks for parallax experiments, depth-aware compositing or computer-vision prototypes. |
+| Requirements | Python, PyTorch and a downloaded checkpoint; the example selects CUDA, Apple MPS or CPU according to availability. |
+| Caveat | Default checkpoints estimate relative depth. Small-model weights use Apache-2.0, while larger variants carry noncommercial terms; choose the checkpoint deliberately. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/DepthAnything/Depth-Anything-V2)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `depth-anything-v2`.
+
+
+# SAM 2: Prototype object cutouts, video masking or annotation tools from user-supplied prompts
+
+Select objects in images and propagate segmentation masks through video, with example notebooks and web-demo source.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://sam2.metademolab.com/)
+
+Official interactive demo; requires JavaScript. Hosted availability may vary and compute may queue.
+
+[Upstream project](https://github.com/facebookresearch/sam2) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#images-and-video)
+
+| Field | Details |
+|---|---|
+| Category | Images and video |
+| Use case | Prototype object cutouts, video masking or annotation tools from user-supplied prompts. |
+| Requirements | Python, compatible PyTorch and TorchVision versions, and a model checkpoint; the documented installation targets a GPU machine and recommends WSL for Windows. |
+| Caveat | Match checkpoint and code versions. A failed optional CUDA extension build can limit post-processing, and masks still need review for the intended footage. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/facebookresearch/sam2)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `sam2`.
+
+
+# BiRefNet: Build a subject-cutout workflow or experiment with placing text behind a foreground subject
+
+Extract detailed foreground masks using pretrained models for general segmentation, portraits and image matting.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://huggingface.co/spaces/ZhengPeng7/BiRefNet_demo)
+
+Official interactive demo; hosted availability may vary and compute may queue.
+
+[Upstream project](https://github.com/ZhengPeng7/BiRefNet) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#images-and-video)
+
+| Field | Details |
+|---|---|
+| Category | Images and video |
+| Use case | Build a subject-cutout workflow or experiment with placing text behind a foreground subject. |
+| Requirements | A Python inference environment and task-appropriate weights; upstream supplies PyTorch examples, notebooks and ONNX export guidance. |
+| Caveat | Matting and binary segmentation models solve different problems. Check the chosen weights and preprocessing instead of assuming all model variants behave alike. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/ZhengPeng7/BiRefNet)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `birefnet`.
+
+
+# rembg: Batch-process product photos or prepare transparent image assets for a website
+
+Remove image backgrounds through a command-line tool, Python library, HTTP server or Docker container.
+
+[Upstream project](https://github.com/danielgatis/rembg) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#images-and-video)
+
+| Field | Details |
+|---|---|
+| Category | Images and video |
+| Use case | Batch-process product photos or prepare transparent image assets for a website. |
+| Requirements | A supported Python version and a CPU or GPU backend; local ONNX models download on first use. |
+| Caveat | Select a local model when local processing matters: the optional withoutbg backend calls a cloud API. Output quality also depends on which segmentation model is selected. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/danielgatis/rembg)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `rembg`.
+
+
+# MFLUX: Experiment with local image generation while keeping prompts and the creative workflow on an Apple Silicon machine
+
+Run generative image models locally on a Mac using native MLX implementations, a CLI and a Python API.
+
+[Upstream project](https://github.com/mflux-community/mflux) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#images-and-video)
+
+| Field | Details |
+|---|---|
+| Category | Images and video |
+| Use case | Experiment with local image generation while keeping prompts and the creative workflow on an Apple Silicon machine. |
+| Requirements | An Apple Silicon Mac with a compatible MLX environment; install with uv or Python tooling and download the selected model on first use. |
+| Caveat | Memory needs and supported features depend on the selected model. The project's code license does not replace the separate terms for downloaded model weights. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/mflux-community/mflux)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `mflux`.
+
+
+# Upscayl: Enlarge a small illustration or pixelated image before using it in a presentation or design draft
+
+A desktop application for AI image upscaling on Linux, macOS and Windows, with visible before-and-after examples.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://github.com/upscayl/upscayl/blob/main/COMPARISONS.MD)
+
+Upstream examples, not live demo
+
+[Upstream project](https://github.com/upscayl/upscayl) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#images-and-video)
+
+| Field | Details |
+|---|---|
+| Category | Images and video |
+| Use case | Enlarge a small illustration or pixelated image before using it in a presentation or design draft. |
+| Requirements | Install the desktop release for your operating system and use a Vulkan-compatible GPU; many integrated GPUs are unsupported. |
+| Caveat | Upscaling synthesizes plausible detail. Upstream explicitly says it is not a tool for restoring focus to a completely blurred image. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/upscayl/upscayl)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `upscayl`.
+
+
+# Audio Separator: Create practice tracks or isolate parts of a recording you are authorized to process
+
+Separate an audio recording into stems such as vocals and accompaniment using a CLI or Python API and a choice of pretrained models.
+
+[Upstream project](https://github.com/nomadkaraoke/python-audio-separator) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#music-and-speech)
+
+| Field | Details |
+|---|---|
+| Category | Music and speech |
+| Use case | Create practice tracks or isolate parts of a recording you are authorized to process. |
+| Requirements | Python or Docker, FFmpeg and a selected separation model; upstream documents CPU, CUDA and Apple Silicon options. |
+| Caveat | Available stems and accelerator support vary by model. Listen for residual bleed and artifacts, and check the selected model's terms before redistribution. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/nomadkaraoke/python-audio-separator)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `audio-separator`.
+
+
+# Basic Pitch: Turn an instrumental recording into an editable starting point in a digital audio workstation
+
+Convert an audio performance into MIDI notes with pitch bends using Spotify's music-transcription library.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://basicpitch.spotify.com/)
+
+Official browser demo; hosted availability may vary. Browser support and the input recording affect the experience.
+
+[Upstream project](https://github.com/spotify/basic-pitch) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#music-and-speech)
+
+| Field | Details |
+|---|---|
+| Category | Music and speech |
+| Use case | Turn an instrumental recording into an editable starting point in a digital audio workstation. |
+| Requirements | A supported Python environment and compatible audio file; the README links to a browser demo and documents platform-specific model runtimes. |
+| Caveat | Upstream says transcription works best on one instrument at a time. Plan to review and correct notes from a dense mix. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/spotify/basic-pitch)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `basic-pitch`.
+
+
+# Chatterbox: Prototype narration or a speaking character using a voice you own or have permission to use
+
+A family of text-to-speech models with expressive controls, multilingual options and reference-audio voice conditioning.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://huggingface.co/spaces/ResembleAI/Chatterbox)
+
+Official Chatterbox demo linked by upstream; hosted availability may vary and compute may queue. Other model variants have separate demos.
+
+[Upstream project](https://github.com/resemble-ai/chatterbox) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#music-and-speech)
+
+| Field | Details |
+|---|---|
+| Category | Music and speech |
+| Use case | Prototype narration or a speaking character using a voice you own or have permission to use. |
+| Requirements | Python, the chatterbox-tts package and model downloads; documented generation examples use CUDA, and reference-conditioned generation needs an audio clip. |
+| Caveat | Model variants support different controls and languages. Reference-language mismatch can affect accent, and generated audio includes the project's watermarking mechanism. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/resemble-ai/chatterbox)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `chatterbox`.
+
+
+# Kokoro: Add local read-aloud audio or draft narration to a small application
+
+A Python inference library for an open-weight text-to-speech model, with selectable voices and audio-file export examples.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://huggingface.co/hexgrad/Kokoro-82M/blob/main/SAMPLES.md)
+
+Upstream examples, not live demo
+
+[Upstream project](https://github.com/hexgrad/kokoro) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#music-and-speech)
+
+| Field | Details |
+|---|---|
+| Category | Music and speech |
+| Use case | Add local read-aloud audio or draft narration to a small application. |
+| Requirements | Python, the kokoro package, model and voice assets, and relevant language dependencies; espeak-ng supports some languages and English fallback pronunciation. |
+| Caveat | Language and voice selection must match the pipeline. Review pronunciation and pacing on real text before using the output as finished narration. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/hexgrad/kokoro)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `kokoro`.
+
+
+# Docling: Prepare a collection of reports for search, retrieval or a document-processing application
+
+Convert PDFs and other document formats into structured content, including Markdown and JSON, with layout, table and OCR support.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://docling-project.github.io/docling/examples/)
+
+Upstream examples, not live demo
+
+[Upstream project](https://github.com/docling-project/docling) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#documents-and-knowledge)
+
+| Field | Details |
+|---|---|
+| Category | Documents and knowledge |
+| Use case | Prepare a collection of reports for search, retrieval or a document-processing application. |
+| Requirements | A supported Python environment and the docling package; download the models required by the selected local parsing pipeline. |
+| Caveat | Optional model licenses differ from the code license. Spot-check tables, formulas and reading order before indexing extracted content. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/docling-project/docling)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `docling`.
+
+
+# Surya: Explore how a document parser identifies text, tables and page structure in a scanned document
+
+Perform OCR, page-layout analysis, reading-order detection and table recognition, with annotated examples for different document types.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://github.com/datalab-to/surya#examples)
+
+Upstream examples, not live demo
+
+[Upstream project](https://github.com/datalab-to/surya) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#documents-and-knowledge)
+
+| Field | Details |
+|---|---|
+| Category | Documents and knowledge |
+| Use case | Explore how a document parser identifies text, tables and page structure in a scanned document. |
+| Requirements | Python and surya-ocr plus an inference backend: the reviewed instructions use vLLM for NVIDIA GPUs or llama.cpp for CPU and Apple Silicon. |
+| Caveat | The code and model weights have different licenses; broader commercial use of the weights can require a separate license. Review the current model terms before deployment. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/datalab-to/surya)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `surya`.
+
+
+# Animated Drawings: Make a hand-drawn character move in a creative coding or educational experiment
+
+Research code that turns drawings of human figures into animated characters, with configurable motions and scenes.
+
+## Demo or examples
+
+[Explore the creator’s demo or examples](https://sketch.metademolab.com/)
+
+Official browser demo linked from the archived project; requires JavaScript. Hosted availability may vary and compute may queue.
+
+[Upstream project](https://github.com/facebookresearch/AnimatedDrawings) · [Back to collection](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/README.md#playful-experiments)
+
+| Field | Details |
+|---|---|
+| Category | Playful experiments |
+| Use case | Make a hand-drawn character move in a creative coding or educational experiment. |
+| Requirements | Follow the repository's Python and Conda setup; included example configurations demonstrate rendering an interactive scene. |
+| Caveat | The upstream repository was archived in September 2025 and is read-only. Treat it as a research demo that may need dependency fixes rather than an actively maintained application. |
+| Evidence | documentation-reviewed |
+| Documentation reviewed | 2026-09-12 |
+
+## Sources and getting started
+
+[Source 1](https://github.com/facebookresearch/AnimatedDrawings)
+
+Use the upstream documentation for installation and examples. We link to the creator’s demonstrations rather than presenting their work as our own. Confirm current software and model terms before use.
+
+## Improve this entry
+
+Submit a correction or a compatibility report through [the contribution guide](https://github.com/QuicqDev/awesome-open-source-ai-discoveries/blob/main/CONTRIBUTING.md). Entry ID: `animated-drawings`.

